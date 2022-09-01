@@ -23,7 +23,7 @@
   $(`.hide-article-pos`).remove();
   $(`#article_content`).css({ height: 'auto' });
 
-  // 不显示分辨率弹出提示
+  // 界面缩放不弹出提示
   cssRules.push(`.leftPop { display: none }`);
 
   // 代码可复制
