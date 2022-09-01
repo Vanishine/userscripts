@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         哔哩哔哩稍后再看
 // @namespace    https://userscript.vanishing.dev/bilibili-watch-later
-// @version      0.1
+// @version      0.2
 // @description  为哔哩哔哩移除蹩脚的稍后再看播放器，直接打开新标签页
 // @author       Vanishine
 // @match        https://www.bilibili.com/watchlater/
@@ -13,9 +13,22 @@
   'use strict';
   // https://www.bilibili.com/watchlater/#/list
 
-  // TODO: Use some API like https://pptr.dev/api/puppeteer.page.waitforselector/
-  await new Promise(resolve => setTimeout(resolve, 1_000));
-  const links = document.querySelectorAll('.av-about>.t');
+  let resolve;
+  const untilDataLoaded = new Promise(r => (resolve = r));
+  const $loading = document.querySelector('.load-state');
+  new MutationObserver((mutations, observer) => {
+    for (const mutation of mutations) {
+      const resolved = [...mutation.removedNodes].includes($loading);
+      if (resolved) {
+        resolve();
+        observer.disconnect();
+        break;
+      }
+    }
+  }).observe($loading.parentNode, { childList: true });
+  await untilDataLoaded;
+
+  const links = document.querySelectorAll(`.av-about>.t`);
   links.forEach(a => {
     a.target = '_blank';
     a.setAttribute('rel', 'noopener noreferrer');
