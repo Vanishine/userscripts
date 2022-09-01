@@ -28,7 +28,7 @@
 
   // 代码可复制
   cssRules.push(`#content_views pre,
-				 #content_views pre code { user-select: text !important }`);
+                 #content_views pre code { user-select: text !important }`);
   cssRules.push(`.hljs-button.signin { display: none !important }`);
 
   $(`<style>`).html(cssRules.join('')).appendTo(document.body);
