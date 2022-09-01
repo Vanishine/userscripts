@@ -14,9 +14,9 @@
   // https://www.bilibili.com/watchlater/#/list
 
   // TODO: Use some API like https://pptr.dev/api/puppeteer.page.waitforselector/
-  await new Promise((resolve) => setTimeout(resolve, 1_000));
+  await new Promise(resolve => setTimeout(resolve, 1_000));
   const links = document.querySelectorAll('.av-about>.t');
-  links.forEach((a) => {
+  links.forEach(a => {
     a.target = '_blank';
     a.setAttribute('rel', 'noopener noreferrer');
     a.href = a.href.replace('/medialist/play/watchlater', '/video');
