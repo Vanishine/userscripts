@@ -1,0 +1,30 @@
+{
+  "private": true,
+  "name": "userscripts",
+  "version": "1.0.0",
+  "description": "A collection of my userscripts applied to TamperMonkey.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "prettier --check scripts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Vanishine/userscripts.git"
+  },
+  "keywords": [
+    "userscript",
+    "tampermonkey"
+  ],
+  "author": "Vanishine",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Vanishine/userscripts/issues"
+  },
+  "homepage": "https://github.com/Vanishine/userscripts#readme",
+  "devDependencies": {
+    "prettier": "^2.7.1"
+  }
+}
