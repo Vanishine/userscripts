@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         CSDN 免登录
-// @namespace    https://userscript.vanishing.dev/csdn-saver
-// @version      0.1
+// @namespace    https://userscripts.vanishing.dev/csdn-saver
+// @version      1.0
 // @description  免登录查看 CSDN 博客完整内容
 // @author       Vanishing
 // @match        https://blog.csdn.net/*/article/details/*
@@ -11,9 +11,7 @@
 // ==/UserScript==
 
 /* global $ */
-// https://stackoverflow.com/questions/62282642/eslint-no-undef-is-not-defined
-// https://stackoverflow.com/questions/39510736/eslint-dollar-is-not-defined-no-undef
-// https://eslint.org/docs/latest/user-guide/configuring/language-options#using-configuration-comments-1
+
 (() => {
   'use strict';
 
