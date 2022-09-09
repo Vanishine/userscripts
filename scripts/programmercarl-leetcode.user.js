@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         代码随想录
 // @namespace    https://userscripts.vanishing.dev/programmercarl-leetcode
-// @version      1.0
+// @version      1.1
 // @description  代码随想录移除关注墙；始终启用黑暗模式
 // @author       Vanishine
 // @match        https://programmercarl.com/*
@@ -13,7 +13,7 @@
   'use strict';
 
   document.documentElement.dataset.theme = 'dark';
-  $('style')
+  $('<style>')
     .html(`html { color-scheme: dark; } #app { color-scheme: auto; }`)
     .appendTo(document.body);
 
