@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         CSDN 免登录
 // @namespace    https://userscripts.vanishing.dev/csdn-saver
-// @version      1.0
+// @version      1.1
 // @description  免登录查看 CSDN 博客完整内容
 // @author       Vanishing
 // @match        https://blog.csdn.net/*/article/details/*
@@ -28,6 +28,9 @@
   cssRules.push(`#content_views pre,
                  #content_views pre code { user-select: text !important }`);
   cssRules.push(`.hljs-button.signin { display: none !important }`);
+
+  // 不显示登录弹框
+  cssRules.push(`.passport-login-container { display: none !important }`);
 
   $(`<style>`).html(cssRules.join('')).appendTo(document.body);
 })();
